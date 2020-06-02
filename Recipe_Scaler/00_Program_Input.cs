@@ -4,7 +4,7 @@ using System.Threading;
 namespace Recipe_Scaler
 {
 
-    class MainClass
+    class MainClassV1
     {
 
 
@@ -16,7 +16,7 @@ namespace Recipe_Scaler
             unitList = new string[] { "c", "l", "ml", "g", "tsp", "tbsp", "kg" }, ingredientName = new string[80];
 
         static string tempUnit, tempValConvert, recipeName, tempIngredName, finishedingredOut;
-        static bool completedInput = false, endOfRecipe = false, finishedChange = false;
+        static bool completedInput = false, endOfRecipe = false, finishedChange = false, submittedVersion = false;
         // display all ingredients
         static void displayIngreds(bool isNew)
         {
@@ -150,9 +150,14 @@ namespace Recipe_Scaler
         recipeEnd:;
         }
         // This is the main program
-        public static void Main(string[] args)
+        public static void InputMain(string[] args)
 
         {
+            // Submitting name and version to version picker
+            if (!submittedVersion)
+            {
+                MainClass
+            }
             // First basic instructions
             Console.WriteLine(
                 "This program can covert measurements," +
@@ -184,33 +189,6 @@ namespace Recipe_Scaler
             Console.WriteLine("if something is incorrect, please enter the ingredient's number, and you will");
             Console.WriteLine("be able to edit the ingredient.");
             Console.WriteLine("Please enter \"confirm\" or the ingredient number now.");
-
-            while (!finishedChange)
-            {
-                finishedingredOut = Console.ReadLine();
-                int.TryParse(finishedingredOut, out int parsed);
-                if (parsed != 0)
-                {
-                    changeIngred = int.Parse(finishedingredOut);
-                    if (changeIngred > 0 && changeIngred < ingredientName.Length)
-                    {
-                        Console.WriteLine($"Okay. The following instrucions will be to replace: {ingredientName[changeIngred - 1]}");
-                        string keepPrevName = ingredientName[changeIngred - 1];
-                        Console.WriteLine("Ingredient Name:");
-                        input(changeIngred - 1, false);
-                        Console.WriteLine($"{keepPrevName} (ingredient number {changeIngred}) is now changed to updated {ingredientName[changeIngred]}");
-                        displayIngreds(true);
-                        Console.WriteLine("You can type confirm to proceed or another ingredient number to edit.");
-                    }
-                }
-                else if (finishedingredOut.ToLower() == "confirm")
-                {
-                    Console.WriteLine("Great! now would you like to convert measurements or to scale the ingredients?");
-                    finishedChange = true;
-                }
-
-            }
-            Console.WriteLine("You can enter \"s\" to scale or \"c\" to convert measurements");
         }
     }
 }

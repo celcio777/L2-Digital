@@ -30,8 +30,9 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="01_Program.cs" />
-    <Compile Include="00_Program.cs" />
+    <Compile Include="01_Program_ChangeIngreds.cs" />
+    <Compile Include="00_Program_Input.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

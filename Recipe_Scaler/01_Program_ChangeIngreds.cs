@@ -153,7 +153,7 @@ namespace Recipe_Scaler
         recipeEnd:;
         }
         // This is the main program
-        public static void Main(string[] args)
+        public static void ChangeMain(string[] args)
 
         {
             // First basic instructions
