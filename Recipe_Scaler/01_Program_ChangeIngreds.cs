@@ -9,9 +9,6 @@ namespace Recipe_Scaler
 
     class MainClassV2
     {
-
-
-
         static float[] measurementVal = new float[80];
         static float tempVal;
         static int ingredNumOut = 0, changeIngred = 0;
@@ -20,6 +17,7 @@ namespace Recipe_Scaler
 
         static string tempUnit, tempValConvert, recipeName, tempIngredName, finishedingredOut;
         static bool completedInput = false, endOfRecipe = false, finishedChange = false;
+        
         // display all ingredients
         static void displayIngreds(bool isNew)
         {

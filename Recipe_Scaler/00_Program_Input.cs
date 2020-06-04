@@ -1,12 +1,13 @@
 ﻿using System;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Threading;
 
 namespace Recipe_Scaler
 {
-
+   
     class MainClassV1
     {
-
+        
 
 
         static float[] measurementVal = new float[80];
@@ -17,6 +18,9 @@ namespace Recipe_Scaler
 
         static string tempUnit, tempValConvert, recipeName, tempIngredName, finishedingredOut;
         static bool completedInput = false, endOfRecipe = false, finishedChange = false, submittedVersion = false;
+
+       
+        
         // display all ingredients
         static void displayIngreds(bool isNew)
         {
@@ -153,11 +157,6 @@ namespace Recipe_Scaler
         public static void InputMain(string[] args)
 
         {
-            // Submitting name and version to version picker
-            if (!submittedVersion)
-            {
-                MainClass
-            }
             // First basic instructions
             Console.WriteLine(
                 "This program can covert measurements," +
