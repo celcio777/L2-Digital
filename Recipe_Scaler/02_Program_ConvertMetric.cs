@@ -7,19 +7,50 @@ using System.Configuration;
 namespace Recipe_Scaler
 {
 
-    class MainClassV2
+    class MainClassV3
     {
-        static float[] measurementVal = new float[80];
+        static float[] measurementVal = new float[80], covertRateMetric = new float[] {16, 0.22f};
         static float tempVal;
         static int ingredNumOut = 0, changeIngred = 0, ConvertScaleChoice = 0;
         static string[] measurementUnit = new string[80], /* array for checking if unit is valid */
-            unitList = new string[] { "c", "l", "ml", "g", "tsp", "tbsp", "kg" }, ingredientName = new string[80],
-            metricList = new string[] {"c","l","ml","g", "kg" };
+            unitList = new string[] { "c", "l", "ml", "g", "tsp", "tbsp", "kg", "gal" }, ingredientName = new string[80],
+            metricList = new string[] { "c", "l", "ml", "g", "kg" }, imperialConvert = new string[] {"tbsp", "gal", "tsp"};
 
         static string tempUnit, tempValConvert, recipeName, tempIngredName, finishedingredOut;
         static bool completedInput = false, endOfRecipe = false, finishedChange = false;
-        
-        
+
+        static void convertIngreds()
+        {
+            Console.WriteLine("Would you like to convert to Imperial (\"i\") or Metric (\"m\")?");
+            string imperialMetric = "";
+            while (imperialMetric.ToLower() != "i" || imperialMetric.ToLower() != "m")
+            {
+                imperialMetric = Console.ReadLine();
+                if (imperialMetric.ToLower() == "m")
+                {
+                    Console.WriteLine("Okay, Converting to metric now.");
+                    for (int i = 0; i < measurementVal.Length; i++)
+                    {
+                        for (int j = 0; j < metricList.Length; j++)
+                        {
+                            if (measurementUnit[i] != metricList[j])
+                            {
+
+                            }
+                        }
+                    }
+                }
+                else if (imperialMetric.ToLower() == "i")
+                {
+
+                }
+                else
+                {
+                    Console.WriteLine("Sorry! I didn't recognise that as a valid input. Please make sure you enter either \"i\" or \"m\"");
+                }
+            }
+
+        }
         // display all ingredients
         static void displayIngreds(bool isNew)
         {
@@ -208,12 +239,33 @@ namespace Recipe_Scaler
                 }
                 else if (finishedingredOut.ToLower() == "confirm")
                 {
+                    Console.WriteLine("Great! now would you like to convert measurements or to scale the ingredients?");
                     finishedChange = true;
                 }
 
             }
-            
-            
+            Console.WriteLine("You can enter \"s\" to scale or \"c\" to convert measurements");
+            string convertScale = " ";
+            while (convertScale != "")
+            {
+                convertScale = Console.ReadLine();
+                if (convertScale.ToLower() == "c" || convertScale.ToLower() == "s")
+                {
+                    if (convertScale.ToLower() == "c")
+                    {
+
+                    }
+                    break;
+
+                }
+                else
+                {
+                    Console.WriteLine("Sorry! The didn't look like the letter \"s\" or \"c\". Please try again.");
+                    Console.WriteLine("Enter  \"s\" for scaling or \"c\" for conversion.");
+                }
+            }
+
         }
     }
 }
+

@@ -32,6 +32,7 @@
   <ItemGroup>
     <Compile Include="01_Program_ChangeIngreds.cs" />
     <Compile Include="00_Program_Input.cs" />
+    <Compile Include="02_Program_ConvertMetric.cs" />
     <Compile Include="VersionChoice.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
